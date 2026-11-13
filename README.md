@@ -17,5 +17,5 @@ brew install EathonEvans/maclean/maclean
 
 ## 说明
 
-- Homebrew 安装不带隔离标记，**首次打开无 Gatekeeper 弹窗**
+- 安装后自动移除隔离标记，**首次打开无 Gatekeeper 弹窗**
 - 清洁模式需在 系统设置 → 隐私与安全性 → 辅助功能 中允许 Maclean

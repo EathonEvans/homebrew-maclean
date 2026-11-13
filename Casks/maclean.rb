@@ -14,6 +14,14 @@ cask "maclean" do
 
   app "maclean.app"
 
+  # 自用 tap：安装后移除隔离标记，跳过 Gatekeeper 首启拦截
+  # （应用为本人构建发布；发布给第三方时建议改走公证流程）
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/maclean.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/Library/Preferences/com.ethon.maclean.plist",
     "~/Library/Caches/com.ethon.maclean",
